@@ -9,8 +9,8 @@ namespace Medical.Domain.CommonRecords
 {
     public record Name
     {
-        private static readonly Regex NameRegex = new(@"^[a-zA-Z]+$", RegexOptions.Compiled);
-
+        private static readonly Regex NameRegex = new(@"^[a-zA-Z\s.]+$", RegexOptions.Compiled);
+        
         public Name(string Value)
         {
             if (!NameRegex.IsMatch(Value))

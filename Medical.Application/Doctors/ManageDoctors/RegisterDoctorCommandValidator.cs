@@ -6,10 +6,10 @@ namespace Medical.Application.Doctors.ManageDoctors
     {
         public RegisterDoctorCommandValidator()
         {
-            //RuleFor(x => x.Name).NotEmpty();
-            //RuleFor(x => x.LicenseNumber).NotEmpty();
-            //RuleFor(x => x.Specialty).NotEmpty()
-            //    .WithMessage("All data are required");
+            RuleFor(x => x.Name).NotEmpty();
+            RuleFor(x => x.LicenseNumber).NotEmpty();
+            RuleFor(x => x.Specialty).NotEmpty()
+                .WithMessage("All data are required");
         }
     }
 }
