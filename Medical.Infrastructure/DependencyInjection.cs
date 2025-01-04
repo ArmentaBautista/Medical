@@ -6,12 +6,14 @@ using Medical.Domain.Abstractions;
 using Medical.Domain.Appointments;
 using Medical.Domain.Doctors;
 using Medical.Domain.Patients;
+using Medical.Domain.Pays;
 using Medical.Domain.Users;
 using Medical.Infrastructure.Appointments;
 using Medical.Infrastructure.Doctors;
 using Medical.Infrastructure.Implementations.Communication;
 using Medical.Infrastructure.Implementations.Data;
 using Medical.Infrastructure.Patients;
+using Medical.Infrastructure.Pays;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -40,6 +42,7 @@ namespace Medical.Infrastructure
             services.AddScoped<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
 
             services.AddScoped<IUnitOfWork>(x => x.GetRequiredService<ApplicationDbContext>());
 

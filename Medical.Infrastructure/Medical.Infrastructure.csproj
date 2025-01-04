@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Medical.Application\Medical.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pays\" />
-  </ItemGroup>
-
 </Project>
