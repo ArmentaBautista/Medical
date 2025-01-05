@@ -28,6 +28,16 @@ public class PaymentController : ControllerBase
         return result.IsSuccess ? Ok(result.Value) : NotFound();
     }
 
+    [HttpGet("by-appointment/{appointmentId:guid}")]
+    public async Task<IActionResult> GetByAppointmentIdAsync(Guid appointmentId, CancellationToken cancellationToken)
+    {
+        var query = new GetPaymentsByAppointmentQuery(appointmentId);
+
+        var result = await _sender.Send(query, cancellationToken);
+
+        return Ok(result.Value);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Register([FromBody] RegisterPaymentRequest request,
         CancellationToken cancellationToken)
