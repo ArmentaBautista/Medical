@@ -4,6 +4,7 @@ using MediatR;
 using Medical.Domain.Appointments;
 using Medical.Domain.Doctors;
 using Medical.Domain.Patients;
+using Medical.Domain.Pays;
 using Microsoft.EntityFrameworkCore;
 
 namespace Medical.Infrastructure
@@ -20,6 +21,7 @@ namespace Medical.Infrastructure
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Patient> Patients { get; set; }    
+        public DbSet<Payment> Payments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
