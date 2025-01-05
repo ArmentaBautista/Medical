@@ -9,6 +9,8 @@ namespace Medical.Domain.CommonRecords
 {
     public record Name
     {
+        public string CompleteName { get; set; } = string.Empty;
+
         private static readonly Regex NameRegex = new(@"^[a-zA-Z\s.]+$", RegexOptions.Compiled);
         
         public Name(string Value)
@@ -17,9 +19,10 @@ namespace Medical.Domain.CommonRecords
             {
                 throw new ArgumentException("Name can only contain letters.", nameof(Value));
             }
+            CompleteName = Value.Trim();
         }
 
-        private Name()
+        public Name()
         {
         }
     }

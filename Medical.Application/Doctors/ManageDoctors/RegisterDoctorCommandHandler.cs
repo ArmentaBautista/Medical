@@ -31,8 +31,8 @@ namespace Medical.Application.Doctors.ManageDoctors
             {
                 var doctor = Doctor.Register(
                     request.Id,
-                    new Name(request.Name),
-                    new LicenseNumber(request.LicenseNumber),
+                    new Name(){CompleteName = request.Name },
+                    new LicenseNumber(){Number = request.LicenseNumber },
                     new Specialty(){Name = request.Specialty.Name });
 
                 doctorRepository.Add(doctor);
