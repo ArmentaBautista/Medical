@@ -22,9 +22,9 @@ namespace Medical.Application.Appointments.GetAppointments
         {
             using var connection = sqlConnectionFactory.CreateConnection();
 
-            const string SqlObject = "pGetAppointments";
+            const string SqlObject = "pGetAppointment";
             var args = new DynamicParameters();
-            args.Add("@AppointmentId", request.AppointmentId);
+            args.Add("@pAppointmentId", request.AppointmentId);
 
 
             var appointment = await connection.QueryFirstOrDefaultAsync<AppointmentResponse>(
