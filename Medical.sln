@@ -17,6 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medical.Contracts", "Medica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medical.Api", "Medical.Api\Medical.Api.csproj", "{9EDD3FA0-E6AD-465D-8C8B-128A2293F76A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BD", "BD", "{80362C80-71C7-4346-B60D-174E43228B48}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Create DB.sql = Scripts\Create DB.sql
+		Scripts\pGetDoctorById.sql = Scripts\pGetDoctorById.sql
+		Scripts\pSearchDoctorsBySpecialty.sql = Scripts\pSearchDoctorsBySpecialty.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
