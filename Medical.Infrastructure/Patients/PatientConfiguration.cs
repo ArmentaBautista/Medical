@@ -15,15 +15,15 @@ namespace Medical.Infrastructure.Patients
 
             builder.Property(p => p.Name)
                 .HasMaxLength(60)
-                .HasConversion(p => p.ToString(), value => new Name(value));
+                .HasConversion<string>(p => p.CompleteName, value => new Name(value));
 
             builder.Property(p => p.Email)
                 .HasMaxLength(60)
-                .HasConversion<string>(p => p.ToString(), value => new Domain.CommonRecords.Email(value));
+                .HasConversion<string>(p => p.Value, value => new Domain.CommonRecords.Email(value));
 
             builder.Property(p => p.PhoneNumber)
                 .HasMaxLength(60)
-                .HasConversion<string>(p => p.ToString(), value => new PhoneNumber(value));
+                .HasConversion<string>(p => p.Value, value => new PhoneNumber(value));
 
 
         }

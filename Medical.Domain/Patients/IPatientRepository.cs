@@ -11,5 +11,6 @@ namespace Medical.Domain.Patients
         Task<IEnumerable<Patient>> GetAllAsync(CancellationToken cancellationToken = default);
         Task Update(Patient patient);
         Task Delete(Guid id);
+        void Add(Patient patient);
     }
 }

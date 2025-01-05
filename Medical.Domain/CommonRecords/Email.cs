@@ -5,6 +5,7 @@ namespace Medical.Domain.CommonRecords
     public record Email
     {
         private static readonly Regex EmailRegex = new(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.Compiled);
+        public string Value { get; private set; }
 
         public Email(string value)
         {
@@ -12,11 +13,15 @@ namespace Medical.Domain.CommonRecords
             {
                 throw new ArgumentException("Invalid email format.", nameof(value));
             }
+
+            Value = value;
         }
 
         private Email()
         {
             
         }
+
+        
     }
 }

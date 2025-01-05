@@ -13,5 +13,21 @@ namespace Medical.Domain.Patients
         {
             
         }
+
+        public static Patient Register(
+            string name,
+            string email,
+            string phoneNumber)
+        {
+            var patient = new Patient()
+            {
+                Id = Guid.NewGuid(),
+                Name = new Name(name),
+                Email = new Email(email),
+                PhoneNumber = new PhoneNumber(phoneNumber)
+            };
+
+            return patient;
+        }
     }
 }

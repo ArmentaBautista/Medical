@@ -5,13 +5,17 @@ namespace Medical.Domain.CommonRecords
     public record PhoneNumber
     {
         private static readonly Regex PhoneNumberRegex = new(@"^\+?[1-9]\d{1,14}$", RegexOptions.Compiled);
+        public string Value { get; private set; }
 
-        public PhoneNumber(string Value)
+        public PhoneNumber(string value
+        )
         {
-            if (!PhoneNumberRegex.IsMatch(Value))
+            if (!PhoneNumberRegex.IsMatch(value))
             {
-                throw new ArgumentException("Invalid phone number format.", nameof(Value));
+                throw new ArgumentException("Invalid phone number format.", nameof(value));
             }
+
+            Value = value;
         }
 
         private PhoneNumber()

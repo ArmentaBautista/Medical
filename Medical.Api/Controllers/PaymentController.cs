@@ -18,10 +18,10 @@ public class PaymentController : ControllerBase
     }
 
 
-    [HttpGet("{id:guid}")]
-    public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken)
+    [HttpGet("GetPayment")]
+    public async Task<IActionResult> GetById([FromQuery] GetPaymentRequest request, CancellationToken cancellationToken)
     {
-        var query = new GetPaymentQuery(id);
+        var query = new GetPaymentQuery(request.Id);
 
         var result = await _sender.Send(query, cancellationToken);
 
