@@ -14,11 +14,11 @@ namespace Medical.Infrastructure.Doctors
 
             builder.Property(doctor => doctor.Name)
                 .HasMaxLength(32)
-                .HasConversion<string>(name => name.ToString(), value => new Name(value));
+                .HasConversion<string>(name => name.CompleteName, value => new Name(value));
 
             builder.Property(doctor => doctor.LicenseNumber)
                 .HasMaxLength(32)
-                .HasConversion<string>(x => x.ToString(), value => new LicenseNumber(value));
+                .HasConversion<string>(x => x.Number, value => new LicenseNumber(value));
 
             builder.Property(doctor => doctor.Specialty)
                 .HasMaxLength(32)

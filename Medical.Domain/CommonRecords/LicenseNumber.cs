@@ -9,6 +9,7 @@ namespace Medical.Domain.CommonRecords
 {
     public record LicenseNumber
     {
+        public string Number { get; set; } = string.Empty;
 
         private static readonly Regex LicenseNumberRegex = new(@"^\+?[1-9]\d{1,14}$", RegexOptions.Compiled);
 
@@ -18,11 +19,12 @@ namespace Medical.Domain.CommonRecords
             {
                 throw new ArgumentException("LicenseNumber can only contain letters and numbers.", nameof(Value));
             }
+            Number = Value.Trim();
         }
 
-        private LicenseNumber()
+        public LicenseNumber()
         {
-            
+
         }
     }
 }
